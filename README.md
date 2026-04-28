@@ -590,6 +590,8 @@ A Domain Name System (DNS) translates a domain name such as www.example.com to a
 
 DNS is hierarchical, with a few authoritative servers at the top level.  Your router or ISP provides information about which DNS server(s) to contact when doing a lookup.  Lower level DNS servers cache mappings, which could become stale due to DNS propagation delays.  DNS results can also be cached by your browser or OS for a certain period of time, determined by the [time to live (TTL)](https://en.wikipedia.org/wiki/Time_to_live).
 
+<img width="850" height="529" alt="image" src="https://github.com/user-attachments/assets/07bb9ceb-956a-40a5-b308-ae0b1cb755a4" />
+
 * **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
 * **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
 * **A record (address)** - Points a name to an IP address.
