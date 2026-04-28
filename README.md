@@ -592,6 +592,7 @@ DNS is hierarchical, with a few authoritative servers at the top level.  Your ro
 
 <img width="850" height="529" alt="image" src="https://github.com/user-attachments/assets/07bb9ceb-956a-40a5-b308-ae0b1cb755a4" />
 
+DNS records are instructions stored in a domain’s DNS server that tell the internet how to handle requests for that domain:
 * **NS record (name server)** - Specifies the DNS servers for your domain/subdomain.
 * **MX record (mail exchange)** - Specifies the mail servers for accepting messages.
 * **A record (address)** - Points a name to an IP address.
