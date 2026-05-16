@@ -508,6 +508,14 @@ After a write, reads will see it.  Data is replicated synchronously.
 
 This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
 
+### Causal Consistency 
+
+Related events appear in the same order to all users. This ensures logical ordering of dependent actions, such as ensuring comments on a post must appear after the post itself.
+
+### Read-your-own-writes Consistency
+
+Users always see their own updates immediately, though other users might see older versions. This is commonly used in social media platforms where users expect to see their own profile updates right away.
+
 ### Source(s) and further reading
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
