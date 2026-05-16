@@ -463,6 +463,22 @@ Responses return the most readily available version of the data available on any
 
 AP is a good choice if the business needs to allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
 
+If you prioritize consistency, your design might include:
+- Distributed Transactions: Ensuring multiple data stores (like cache and database) remain in sync through two-phase commit protocols. This adds complexity but guarantees consistency across all nodes. This means users will likely experience higher latency as the system ensures data is consistent across all nodes.
+- Single-Node Solutions: Using a single database instance to avoid propagation issues entirely. While this limits scalability, it eliminates consistency challenges by having a single source of truth.
+- Technology Choices:
+    - Traditional RDBMSs (PostgreSQL, MySQL)
+    - Google Spanner
+    - DynamoDB (in strong consistency mode)
+
+On the other hand, if you prioritize availability, your design can include:
+- Multiple Replicas: Scaling to additional read replicas with asynchronous replication, allowing reads to be served from any replica even if it's slightly behind. This improves read performance and availability at the cost of potential staleness.
+- Change Data Capture (CDC): Using CDC to track changes in the primary database and propagate them asynchronously to replicas, caches, and other systems. This allows the primary system to remain available while updates flow through the system eventually.
+- Technology Choices:
+    - Cassandra
+    - DynamoDB (in multiple availability zone configuration)
+    - Redis clusters
+
 ### Source(s) and further reading
 
 * [CAP theorem revisited](https://robertgreiner.com/cap-theorem-revisited/)
